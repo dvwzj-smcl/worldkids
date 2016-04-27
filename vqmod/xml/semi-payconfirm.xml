@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>SEMI MOD Payconfirm</id>
+    <version>1.4.x and above</version>
+    <vqmver required="true">2.5.0</vqmver>
+    <author>Semicolon</author>
+    <file name="catalog/view/theme/*/template/module/account.tpl">
+        <operation info="Add selection">
+            <search position="iafter"><![CDATA[
+			<li><a href="<?php echo $address; ?>"><?php echo $text_address; ?></a></li>
+			]]></search>
+            <add><![CDATA[
+			<li><a href="<?php echo $payconfirm; ?>"><?php echo $text_payconfirm; ?></a></li>
+			]]></add>
+        </operation>
+    </file>
+
+    <file name="admin/language/thai/setting/setting.php">
+        <operation info="Add setting">
+            <search position="bottom"></search>
+            <add><![CDATA[
+			$_['text_payconfirm'] = 'แจ้งการชำระเงิน';
+			$_['entry_payconfirm_setting'] = 'Payment Confirmation Setting';
+			$_['entry_payconfirm_status'] = 'Payment Confirmation Status';
+			$_['entry_payconfirm_mail'] = 'Payment Confirmation Alert Mail';
+			$_['entry_payconfirm_notify'] = 'Payment Confirmation Notify Customer';
+			$_['entry_payconfirm_slip'] = 'Payment Slip Required';
+			$_['help_payconfirm_setting'] = 'Set the order status the customer\'s order must reach before they are allowed to make their payment confirmation.';
+			$_['help_payconfirm_status'] = 'Set the default order status when a payment confirmation submitted.';
+			$_['help_payconfirm_mail'] = 'Send an email to the store owner when a payment confirmation submitted.';
+			$_['help_payconfirm_notify'] = 'Notify customer when they submit a payment confirmation.';
+			$_['help_payconfirm_slip'] = 'Customer must upload payment slip file.';
+			$_['error_payconfirm_setting'] = 'You must choose at least 1 payment confirmation setting status';
+			]]></add>
+        </operation>
+    </file>
+
+    <file name="catalog/language/thai/common/footer.php">
+        <operation info="Add footer">
+            <search position="bottom"></search>
+            <add><![CDATA[
+			$_['text_payconfirm'] = 'แจ้งการชำระเงิน';
+			]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/thai/common/header.php">
+        <operation info="Add header">
+            <search position="bottom"></search>
+            <add><![CDATA[
+			$_['text_payconfirm'] = 'แจ้งการชำระเงิน';
+			]]></add>
+        </operation>
+    </file>
+
+    <file name="catalog/language/thai/module/account.php">
+        <operation info="Add selection">
+            <search position="bottom"></search>
+            <add><![CDATA[
+			$_['text_payconfirm'] = 'แจ้งการชำระเงิน';
+			]]></add>
+        </operation>
+    </file>
+
+</modification>

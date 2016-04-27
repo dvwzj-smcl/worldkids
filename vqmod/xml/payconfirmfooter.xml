@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>PAYMENT CONFIRMATION FOOTER</id>
+	<version>1.4.x and above</version>
+	<vqmver required="true">2.5.0</vqmver>
+	<author>ChimotCode</author>
+	
+	<file name="catalog/controller/common/footer.php">
+		<operation info="Add footer">
+			<search position="after"><![CDATA[
+			$this->load->language('common/footer');
+			]]></search>
+			<add><![CDATA[
+			$data['text_payconfirm'] = $this->language->get('text_payconfirm');
+			$data['payconfirm'] = $this->url->link('account/payconfirm', '', 'SSL');
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/english/common/footer.php">
+		<operation info="Add footer">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Payment Confirmation';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/indonesia/common/footer.php">
+		<operation info="Add footer">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Konfirmasi Pembayaran';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/common/footer.tpl">
+		<operation info="Add footer">
+			<search position="after"><![CDATA[
+			<li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
+			]]></search>
+			<add><![CDATA[
+			<li><a href="<?php echo $payconfirm; ?>"><?php echo $text_payconfirm; ?></a></li>
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

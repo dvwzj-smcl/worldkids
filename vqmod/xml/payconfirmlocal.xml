@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>PAYMENT CONFIRMATION</id>
+	<version>1.4.x and above</version>
+	<vqmver required="true">2.5.0</vqmver>
+	<author>ChimotCode</author>
+	
+	<file name="admin/controller/common/menu.php">
+		<operation info="Add a list menu">
+			<search position="after"><![CDATA[
+			$data['text_review'] = $this->language->get('text_review');
+			]]></search>
+			<add><![CDATA[
+			$data['text_payconfirm'] = $this->language->get('text_payconfirm');
+			$data['text_payconfirm_destination'] = $this->language->get('text_payconfirm_destination');
+			$data['text_payconfirm_method'] = $this->language->get('text_payconfirm_method');
+			]]></add>
+		</operation>
+		<operation info="Add a list menu">
+			<search position="after"><![CDATA[
+			$data['review'] = $this->url->link('catalog/review', 'token=' . $this->session->data['token'], 'SSL');
+			]]></search>
+			<add><![CDATA[
+			$data['payconfirm_destination'] = $this->url->link('localisation/payconfirm_destination', 'token=' . $this->session->data['token'], 'SSL');
+			$data['payconfirm_method'] = $this->url->link('localisation/payconfirm_method', 'token=' . $this->session->data['token'], 'SSL');
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="admin/language/english/common/menu.php">
+		<operation info="Add a list menu">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Pay Confirms';
+			$_['text_payconfirm_destination'] = 'Pay Accounts';
+			$_['text_payconfirm_method'] = 'Pay Methods';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="admin/view/template/common/menu.tpl">
+		<operation info="Add a list menu">
+			<search position="before"><![CDATA[
+          <li><a class="parent"><?php echo $text_return; ?></a>
+			]]></search>
+			<add><![CDATA[
+			<li><a class="parent"><?php echo $text_payconfirm; ?></a>
+				<ul>
+					<li><a href="<?php echo $payconfirm_destination; ?>"><?php echo $text_payconfirm_destination; ?></a></li>
+					<li><a href="<?php echo $payconfirm_method; ?>"><?php echo $text_payconfirm_method; ?></a></li>
+				</ul>
+			</li>
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

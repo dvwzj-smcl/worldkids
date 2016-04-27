@@ -1,0 +1,178 @@
+---------- Date: 2016-04-26 10:03:49 ~ IP : ::1 ----------
+REQUEST URI : /worldkids/semiadmin/index.php?route=module/revslideropencart&token=gfqhOfhYIkjQFCi5o8CEdXt3oulup4Jq
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/mega_filter.xml
+   id        : Mega Filter PRO
+   version   : 1.5.x
+   vqmver    : 2.4.0
+   author    : marsilea15@gmail.com
+VQModObject::parseMods - Could not resolve path for [admin/controller/design/layout.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/design/layout.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/category.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirm.xml
+   id        : PAYMENT CONFIRMATION
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [admin/controller/setting/setting.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/english/setting/setting.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/setting/setting.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/menu.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/english/common/menu.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/menu.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/account/account.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/module/account.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmdb.xml
+   id        : INDONESIA BANK TRANSFER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/menu.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmfooter.xml
+   id        : PAYMENT CONFIRMATION FOOTER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/common/footer.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmheader.xml
+   id        : PAYMENT CONFIRMATION HEADER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/common/header.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/semi-payconfirm.xml
+   id        : SEMI MOD Payconfirm
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : Semicolon
+VQModObject::parseMods - Could not resolve path for [admin/language/thai/setting/setting.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-04-26 10:08:13 ~ IP : ::1 ----------
+REQUEST URI : /worldkids/
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/mega_filter.xml
+   id        : Mega Filter PRO
+   version   : 1.5.x
+   vqmver    : 2.4.0
+   author    : marsilea15@gmail.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): catalog/view/javascript/bootstrap/js/bootstrap.min.js
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmheader.xml
+   id        : PAYMENT CONFIRMATION HEADER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="list-inline">
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-04-26 10:59:49 ~ IP : ::1 ----------
+REQUEST URI : /worldkids/
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/mega_filter.xml
+   id        : Mega Filter PRO
+   version   : 1.5.x
+   vqmver    : 2.4.0
+   author    : marsilea15@gmail.com
+VQModObject::parseMods - Could not resolve path for [admin/controller/design/layout.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/design/layout.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/category.php] (SKIPPED)
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): catalog/view/javascript/bootstrap/js/bootstrap.min.js
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirm.xml
+   id        : PAYMENT CONFIRMATION
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [admin/controller/setting/setting.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/english/setting/setting.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/setting/setting.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/menu.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/english/common/menu.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/menu.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/account/account.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/module/account.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmdb.xml
+   id        : INDONESIA BANK TRANSFER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/menu.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmfooter.xml
+   id        : PAYMENT CONFIRMATION FOOTER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/common/footer.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmheader.xml
+   id        : PAYMENT CONFIRMATION HEADER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+VQModObject::parseMods - Could not resolve path for [catalog/language/indonesia/common/header.php] (SKIPPED)
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="list-inline">
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/semi-payconfirm.xml
+   id        : SEMI MOD Payconfirm
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : Semicolon
+VQModObject::parseMods - Could not resolve path for [admin/language/thai/setting/setting.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-04-26 11:03:59 ~ IP : ::1 ----------
+REQUEST URI : /worldkids/
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/mega_filter.xml
+   id        : Mega Filter PRO
+   version   : 1.5.x
+   vqmver    : 2.4.0
+   author    : marsilea15@gmail.com
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): catalog/view/javascript/bootstrap/js/bootstrap.min.js
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/payconfirmheader.xml
+   id        : PAYMENT CONFIRMATION HEADER
+   version   : 1.4.x and above
+   vqmver    : 2.5.0
+   author    : ChimotCode
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <ul class="list-inline">
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-04-26 12:01:22 ~ IP : ::1 ----------
+REQUEST URI : /worldkids/index.php?route=product/category&path=20
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\worldkids\vqmod/xml/mega_filter.xml
+   id        : Mega Filter PRO
+   version   : 1.5.x
+   vqmver    : 2.4.0
+   author    : marsilea15@gmail.com
+
+File Name    : catalog/view/theme/*/template/product/category.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): echo $header; ?>
+----------------------------------------------------------------------
+
+

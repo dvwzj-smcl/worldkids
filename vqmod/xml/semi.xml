@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>SEMI MOD</id>
+	<version>1.4.x and above</version>
+	<vqmver required="true">2.5.0</vqmver>
+	<author>ChimotCode</author>
+
+	<file name="system/library/themeoptions.php">
+		<operation info="Add selection">
+			<search position="replace"><![CDATA[
+			$config->set('product_tabs', unserialize(file_get_contents('admin/controller/module/product_tabs.json')));
+			]]></search>
+			<add><![CDATA[
+			$config->set('product_tabs', unserialize(file_get_contents('semiadmin/controller/module/product_tabs.json')));
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/module/account.tpl">
+		<operation info="Add selection">
+			<search position="iafter"><![CDATA[
+			<li><a href="<?php echo $address; ?>"><?php echo $text_address; ?></a></li>
+			]]></search>
+			<add><![CDATA[
+			<li><a href="<?php echo $payconfirm; ?>"><?php echo $text_payconfirm; ?></a></li>
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/common/header.tpl">
+		<operation info="Add selection">
+			<search position="ibefore"><![CDATA[
+			</head>
+			]]></search>
+			<add><![CDATA[
+			<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/css/semi.css" />
+			<!-- link rel="stylesheet" type="text/css" href="catalog/view/theme/default/bower_components/several-icons/css/fontello.css" / -->
+            <link href="https://fonts.googleapis.com/css?family=Kanit:400,600" rel="stylesheet" type="text/css">
+			<script type="text/javascript" src="catalog/view/theme/default/js/semi.js"></script>
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/blog/blog.tpl">
+		<operation info="Add selection">
+			<search position="iafter"><![CDATA[
+			$template == 'grid_3_columns.tpl'
+			]]></search>
+			<add><![CDATA[
+			 || $template == 'semi-grid.tpl'
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/common/language.tpl">
+		<operation info="Add selection">
+			<search position="ibefore"><![CDATA[
+			<?php echo $language['name']; ?>
+			]]></search>
+			<add><![CDATA[
+			<img src="image/flags/<?php echo $language['image']; ?>" alt="<?php echo $language['name']; ?>" title="<?php echo $language['name']; ?>">
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/module/carousel.tpl">
+		<operation info="Add selection">
+			<search position="replace" offset="8"><![CDATA[
+			<?php foreach ($banners as $banner) { ?>
+			]]></search>
+			<add><![CDATA[
+			<?php
+			$idx = 1;
+			$lIdx = count($banners);
+			foreach ($banners as $banner) {
+				if($idx == 1) {
+				   echo '<div class="item text-center">';
+				}
+				if($banner['link']) {
+					echo '<a href="'.$banner['link'].'"><img src="'.$banner['image'].'" alt="'.$banner['title'].'" class="img-responsive" /></a>';
+				} else {
+					echo '<img src="'.$banner['image'].'" alt="'.$banner['title'].'" class="img-responsive" />';
+				}
+				if($idx == $lIdx) {
+					echo '</div>';
+				} else if($idx%2 == 0) {
+					echo '</div><div class="item text-center">';
+				}
+				$idx++;
+			}
+			?>
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/model/blog/article.php">
+		<operation info="Add selection">
+			<search position="replace" offset="10"><![CDATA[
+			public function getLatestArticles($limit) {
+			]]></search>
+			<add><![CDATA[
+			public function getLatestArticles($setting) {
+				$sql = "SELECT *, ba.article_id FROM " . DB_PREFIX . "blog_article ba
+					LEFT JOIN " . DB_PREFIX . "blog_article_description bad ON (ba.article_id = bad.article_id)
+					LEFT JOIN " . DB_PREFIX . "blog_article_to_category bctc ON bctc.article_id = ba.article_id
+					LEFT JOIN " . DB_PREFIX . "blog_article_to_store ba2s ON (ba.article_id = ba2s.article_id)
+					LEFT JOIN " . DB_PREFIX . "blog_category_description bcd ON (bctc.category_id = bcd.category_id)
+					WHERE bad.language_id = '" . (int)$this->config->get('config_language_id') . "'
+						AND ba.status = 1 AND ba2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND bcd.name".($setting['template']=='home_page_video.tpl'?'=':'<>')."'video' AND ba.date_published < NOW()
+					GROUP BY ba.article_id
+					ORDER BY ba.date_published DESC
+					LIMIT " . (int)$setting['articles_limit'] . "
+					";
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/controller/module/blog_latest.php">
+		<operation info="Add selection">
+			<search position="replace"><![CDATA[
+			$results = $this->model_blog_article->getLatestArticles($setting['articles_limit']);
+			]]></search>
+			<add><![CDATA[
+			$results = $this->model_blog_article->getLatestArticles($setting);
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

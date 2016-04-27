@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>PAYMENT CONFIRMATION</id>
+	<version>1.4.x and above</version>
+	<vqmver required="true">2.5.0</vqmver>
+	<author>ChimotCode</author>
+	
+	<file name="admin/controller/setting/setting.php">
+		<operation info="Add setting">
+			<search position="after"><![CDATA[
+			$data['heading_title'] = $this->language->get('heading_title');
+			]]></search>
+			<add><![CDATA[
+			$data['text_payconfirm'] = $this->language->get('text_payconfirm');
+			$data['entry_payconfirm_setting'] = $this->language->get('entry_payconfirm_setting');
+			$data['entry_payconfirm_status'] = $this->language->get('entry_payconfirm_status');
+			$data['entry_payconfirm_mail'] = $this->language->get('entry_payconfirm_mail');
+			$data['entry_payconfirm_notify'] = $this->language->get('entry_payconfirm_notify');
+			$data['entry_payconfirm_slip'] = $this->language->get('entry_payconfirm_slip');
+			$data['help_payconfirm_setting'] = $this->language->get('help_payconfirm_setting');
+			$data['help_payconfirm_status'] = $this->language->get('help_payconfirm_status');
+			$data['help_payconfirm_mail'] = $this->language->get('help_payconfirm_mail');
+			$data['help_payconfirm_notify'] = $this->language->get('help_payconfirm_notify');
+			$data['help_payconfirm_slip'] = $this->language->get('help_payconfirm_slip');
+			]]></add>
+		</operation>
+		<operation info="Add setting">
+			<search position="before"><![CDATA[
+			if (isset($this->error['ftp_hostname'])) {
+			]]></search>
+			<add><![CDATA[
+			if (isset($this->error['payconfirm_setting'])) {
+				$data['error_payconfirm_setting'] = $this->error['payconfirm_setting'];
+			} else {
+				$data['error_payconfirm_setting'] = '';
+			}
+			]]></add>
+		</operation>
+		<operation info="Add setting">
+			<search position="before"><![CDATA[
+			$this->load->model('localisation/order_status');
+			]]></search>
+			<add><![CDATA[
+			if (isset($this->request->post['config_payconfirm_setting'])) {
+				$data['config_payconfirm_setting'] = $this->request->post['config_payconfirm_setting'];
+			} elseif ($this->config->get('config_payconfirm_setting')) {
+				$data['config_payconfirm_setting'] = $this->config->get('config_payconfirm_setting');
+			} else {
+				$data['config_payconfirm_setting'] = array();
+			}
+
+			if (isset($this->request->post['config_payconfirm_status_id'])) {
+				$data['config_payconfirm_status_id'] = $this->request->post['config_payconfirm_status_id'];
+			} else {
+				$data['config_payconfirm_status_id'] = $this->config->get('config_payconfirm_status_id');
+			}
+
+			if (isset($this->request->post['config_payconfirm_mail'])) {
+				$data['config_payconfirm_mail'] = $this->request->post['config_payconfirm_mail'];
+			} elseif ($this->config->has('config_payconfirm_mail')) {
+				$data['config_payconfirm_mail'] = $this->config->get('config_payconfirm_mail');
+			} else {
+				$data['config_payconfirm_mail'] = '';
+			}
+
+			if (isset($this->request->post['config_payconfirm_notify'])) {
+				$data['config_payconfirm_notify'] = $this->request->post['config_payconfirm_notify'];
+			} elseif ($this->config->has('config_payconfirm_notify')) {
+				$data['config_payconfirm_notify'] = $this->config->get('config_payconfirm_notify');
+			} else {
+				$data['config_payconfirm_notify'] = '';
+			}
+
+			if (isset($this->request->post['config_payconfirm_slip'])) {
+				$data['config_payconfirm_slip'] = $this->request->post['config_payconfirm_slip'];
+			} elseif ($this->config->has('config_payconfirm_slip')) {
+				$data['config_payconfirm_slip'] = $this->config->get('config_payconfirm_slip');
+			} else {
+				$data['config_payconfirm_slip'] = '';
+			}
+			]]></add>
+		</operation>
+		<operation info="Add setting">
+			<search position="before"><![CDATA[
+			if (!$this->request->post['config_image_category_width'] || !$this->request->post['config_image_category_height']) {
+			]]></search>
+			<add><![CDATA[
+			if (!isset($this->request->post['config_payconfirm_setting'])) {
+				$this->error['payconfirm_setting'] = $this->language->get('error_payconfirm_setting');
+			}
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="admin/language/english/setting/setting.php">
+		<operation info="Add setting">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Payment Confirmations';
+			$_['entry_payconfirm_setting'] = 'Payment Confirmation Setting';
+			$_['entry_payconfirm_status'] = 'Payment Confirmation Status';
+			$_['entry_payconfirm_mail'] = 'Payment Confirmation Alert Mail';
+			$_['entry_payconfirm_notify'] = 'Payment Confirmation Notify Customer';
+			$_['entry_payconfirm_slip'] = 'Payment Slip Required';
+			$_['help_payconfirm_setting'] = 'Set the order status the customer\'s order must reach before they are allowed to make their payment confirmation.';
+			$_['help_payconfirm_status'] = 'Set the default order status when a payment confirmation submitted.';
+			$_['help_payconfirm_mail'] = 'Send an email to the store owner when a payment confirmation submitted.';
+			$_['help_payconfirm_notify'] = 'Notify customer when they submit a payment confirmation.';
+			$_['help_payconfirm_slip'] = 'Customer must upload payment slip file.';
+			$_['error_payconfirm_setting'] = 'You must choose at least 1 payment confirmation setting status';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="admin/view/template/setting/setting.tpl">
+		<operation info="Add setting">
+			<search position="before"><![CDATA[
+			<legend><?php echo $text_return; ?></legend>
+			]]></search>
+			<add><![CDATA[
+                <legend><?php echo $text_payconfirm; ?></legend>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payconfirm-setting"><span data-toggle="tooltip" title="<?php echo $help_payconfirm_setting; ?>"><?php echo $entry_payconfirm_setting; ?></span></label>
+                  <div class="col-sm-10">
+                    <div class="well well-sm" style="height: 150px; overflow: auto;">
+                      <?php foreach ($order_statuses as $order_status) { ?>
+                      <div class="checkbox">
+                        <label>
+                          <?php if (in_array($order_status['order_status_id'], $config_payconfirm_setting)) { ?>
+                          <input type="checkbox" name="config_payconfirm_setting[]" value="<?php echo $order_status['order_status_id']; ?>" checked="checked" />
+                          <?php echo $order_status['name']; ?>
+                          <?php } else { ?>
+                          <input type="checkbox" name="config_payconfirm_setting[]" value="<?php echo $order_status['order_status_id']; ?>" />
+                          <?php echo $order_status['name']; ?>
+                          <?php } ?>
+                        </label>
+                      </div>
+                      <?php } ?>
+                    </div>
+                    <?php if ($error_payconfirm_setting) { ?>
+                    <div class="text-danger"><?php echo $error_payconfirm_setting; ?></div>
+                    <?php } ?>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payconfirm-status"><span data-toggle="tooltip" title="<?php echo $help_payconfirm_status; ?>"><?php echo $entry_payconfirm_status; ?></span></label>
+                  <div class="col-sm-10">
+                    <select name="config_payconfirm_status_id" id="input-payconfirm-status" class="form-control">
+                      <?php foreach ($order_statuses as $order_status) { ?>
+                      <?php if ($order_status['order_status_id'] == $config_payconfirm_status_id) { ?>
+                      <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><?php echo $order_status['name']; ?></option>
+                      <?php } else { ?>
+                      <option value="<?php echo $order_status['order_status_id']; ?>"><?php echo $order_status['name']; ?></option>
+                      <?php } ?>
+                      <?php } ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $help_payconfirm_mail; ?>"><?php echo $entry_payconfirm_mail; ?></span></label>
+                  <div class="col-sm-10">
+                    <label class="radio-inline">
+                      <?php if ($config_payconfirm_mail) { ?>
+                      <input type="radio" name="config_payconfirm_mail" value="1" checked="checked" />
+                      <?php echo $text_yes; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_payconfirm_mail" value="1" />
+                      <?php echo $text_yes; ?>
+                      <?php } ?>
+                    </label>
+                    <label class="radio-inline">
+                      <?php if (!$config_payconfirm_mail) { ?>
+                      <input type="radio" name="config_payconfirm_mail" value="0" checked="checked" />
+                      <?php echo $text_no; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_payconfirm_mail" value="0" />
+                      <?php echo $text_no; ?>
+                      <?php } ?>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $help_payconfirm_notify; ?>"><?php echo $entry_payconfirm_notify; ?></span></label>
+                  <div class="col-sm-10">
+                    <label class="radio-inline">
+                      <?php if ($config_payconfirm_notify) { ?>
+                      <input type="radio" name="config_payconfirm_notify" value="1" checked="checked" />
+                      <?php echo $text_yes; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_payconfirm_notify" value="1" />
+                      <?php echo $text_yes; ?>
+                      <?php } ?>
+                    </label>
+                    <label class="radio-inline">
+                      <?php if (!$config_payconfirm_notify) { ?>
+                      <input type="radio" name="config_payconfirm_notify" value="0" checked="checked" />
+                      <?php echo $text_no; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_payconfirm_notify" value="0" />
+                      <?php echo $text_no; ?>
+                      <?php } ?>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $help_payconfirm_slip; ?>"><?php echo $entry_payconfirm_slip; ?></span></label>
+                  <div class="col-sm-10">
+                    <label class="radio-inline">
+                      <?php if ($config_payconfirm_slip) { ?>
+                      <input type="radio" name="config_payconfirm_slip" value="1" checked="checked" />
+                      <?php echo $text_yes; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_payconfirm_slip" value="1" />
+                      <?php echo $text_yes; ?>
+                      <?php } ?>
+                    </label>
+                    <label class="radio-inline">
+                      <?php if (!$config_payconfirm_slip) { ?>
+                      <input type="radio" name="config_payconfirm_slip" value="0" checked="checked" />
+                      <?php echo $text_no; ?>
+                      <?php } else { ?>
+                      <input type="radio" name="config_payconfirm_slip" value="0" />
+                      <?php echo $text_no; ?>
+                      <?php } ?>
+                    </label>
+                  </div>
+                </div>
+			  </fieldset>
+              <fieldset>
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

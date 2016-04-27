@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>INDONESIA BANK TRANSFER</id>
+	<version>1.4.x and above</version>
+	<vqmver required="true">2.5.0</vqmver>
+	<author>ChimotCode</author>
+	
+	<file name="admin/controller/common/menu.php">
+		<operation info="Add database">
+			<search position="after"><![CDATA[
+			public function index() {
+			]]></search>
+			<add><![CDATA[
+      		$this->db->query("
+				CREATE TABLE IF NOT EXISTS `" . DB_PREFIX . "payconfirm_destination` (
+					`payconfirm_destination_id` int(11) NOT NULL AUTO_INCREMENT,
+					`language_id` int(11) NOT NULL default '0',
+					`name` varchar(64) NOT NULL,
+					PRIMARY KEY  (`payconfirm_destination_id`,`language_id`)
+				) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;");
+      		$this->db->query("
+				CREATE TABLE IF NOT EXISTS `" . DB_PREFIX . "payconfirm_method` (
+					`payconfirm_method_id` int(11) NOT NULL AUTO_INCREMENT,
+					`language_id` int(11) NOT NULL default '0',
+					`name` varchar(64) NOT NULL,
+					PRIMARY KEY  (`payconfirm_method_id`,`language_id`)
+				) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;");
+
+			]]></add>
+		</operation>
+	</file>
+
+</modification>

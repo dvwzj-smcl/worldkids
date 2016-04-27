@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>PAYMENT CONFIRMATION</id>
+	<version>1.4.x and above</version>
+	<vqmver required="true">2.5.0</vqmver>
+	<author>ChimotCode</author>
+	
+	<file name="catalog/controller/account/account.php">
+		<operation info="Add selection">
+			<search position="after"><![CDATA[
+			$data['heading_title'] = $this->language->get('heading_title');
+			]]></search>
+			<add><![CDATA[
+			$data['text_payconfirm'] = $this->language->get('text_payconfirm');
+			$data['payconfirm'] = $this->url->link('account/payconfirm', '', 'SSL');
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/controller/module/account.php">
+		<operation info="Add selection">
+			<search position="after"><![CDATA[
+			$data['heading_title'] = $this->language->get('heading_title');
+			]]></search>
+			<add><![CDATA[
+			$data['text_payconfirm'] = $this->language->get('text_payconfirm');
+			$data['payconfirm'] = $this->url->link('account/payconfirm', '', 'SSL');
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/english/account/account.php">
+		<operation info="Add selection">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Confirm your payment';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/english/module/account.php">
+		<operation info="Add selection">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Payment Confirmation';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/indonesia/account/account.php">
+		<operation info="Add selection">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Konfirmasi pembayaran anda';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/language/indonesia/module/account.php">
+		<operation info="Add selection">
+			<search position="bottom"></search>
+			<add><![CDATA[
+			$_['text_payconfirm'] = 'Konfirmasi Pembayaran';
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/account/account.tpl">
+		<operation info="Add selection">
+			<search position="after"><![CDATA[
+			<li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+			]]></search>
+			<add><![CDATA[
+			<li><a href="<?php echo $payconfirm; ?>"><?php echo $text_payconfirm; ?></a></li>
+			]]></add>
+		</operation>
+	</file>
+
+	<file name="catalog/view/theme/*/template/module/account.tpl">
+		<operation info="Add selection">
+			<search position="iafter"><![CDATA[
+			<a href="<?php echo $address; ?>" class="list-group-item"><?php echo $text_address; ?></a> <a href="<?php echo $wishlist; ?>" class="list-group-item"><?php echo $text_wishlist; ?></a> <a href="<?php echo $order; ?>" class="list-group-item"><?php echo $text_order; ?></a>
+			]]></search>
+			<add><![CDATA[
+			<a href="<?php echo $payconfirm; ?>" class="list-group-item"><?php echo $text_payconfirm; ?></a>
+			]]></add>
+		</operation>
+	</file>
+
+</modification>
