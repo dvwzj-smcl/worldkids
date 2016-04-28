@@ -1,12 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16a44e5f-e13a-490b-9a0d-b61fe86a0d98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\system\storage\cache\cache.currency.1461764696" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\system\storage\cache\cache.language.1461764610" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="16a44e5f-e13a-490b-9a0d-b61fe86a0d98" name="Default" comment="convert megamenu-&gt;menu(vertical) to categories">
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\.idea\worldkids.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\config.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\background\home_bg-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-04-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-05-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-06-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-07-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-08-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-09-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner-big-sale-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner\home_banner_cai-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner\home_banner_ebook-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner\home_banner_learn-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\banner\home_banner_simulation-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\bg-accessories-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\bg-breadcrumb-blog-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\bg-cookie-module-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\bg-megamenu-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\bg-popup-custom-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\bg-popup-newsletter-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\bg-women-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\blank-100x100.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\breadcrumb-category-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\cart-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\category-wall-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\category-wall-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\category-wall-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-04-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-05-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-06-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-07-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\banner-08-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\bg-body-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\bg-coffee-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\bg-footer-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\bg-parallax-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\bg-tea-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\icon-mail-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\icon-phone-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\coffee\icon-support-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\banner-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\banner-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\banner-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\banner-04-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\banner-05-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\banner-big-sale-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\categories-wall-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\categories-wall-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\categories-wall-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\icon-cart-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\icon-cart-hover-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\logo-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-android-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-android2-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-computer-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-ios-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-ios2-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-mac-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-monitor-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-windows-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\megamenu-windows2-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\slider-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\slider-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\computer\slider-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\apple_cinema_30-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\apple_cinema_30-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\apple_cinema_30-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\apple_cinema_30-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\apple_cinema_30-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\apple_cinema_30-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\apple_cinema_30-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\banners\MacBookAir-100x100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\banners\MacBookAir-1140x380.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\banners\iPhone6-100x100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\banners\iPhone6-1140x380.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_1-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_1-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_1-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_2-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_eos_5d_2-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_logo-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\canon_logo-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\compaq_presario-182x182.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\compaq_presario-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\compaq_presario-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\compaq_presario-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_1-100x100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_1-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_1-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\hp_2-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\htc_touch_hd_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\htc_touch_hd_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\htc_touch_hd_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\htc_touch_hd_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\imac_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\imac_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\imac_1-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\iphone_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\iphone_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\iphone_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\iphone_1-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\iphone_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_classic_1-100x100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_classic_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_classic_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_classic_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_classic_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_nano_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_nano_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_nano_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_shuffle_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_shuffle_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_shuffle_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_touch_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_touch_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\ipod_touch_4-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_1-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_1-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_2-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_2-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_3-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_3-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_4-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_air_4-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_pro_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_pro_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\macbook_pro_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\burgerking-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\canon-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\cocacola-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\dell-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\disney-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\harley-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\nfl-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\nintendo-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\redbull-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\sony-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\manufacturer\starbucks-130x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_1-47x47.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_1-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_1-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_1-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_2-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_2-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_3-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_3-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_4-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_4-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_5-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\nikon_d300_5-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\palm_treo_pro_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\palm_treo_pro_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\palm_treo_pro_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\samsung_syncmaster_941bw-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\samsung_syncmaster_941bw-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\samsung_syncmaster_941bw-80x80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\samsung_tab_1-100x100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\samsung_tab_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\samsung_tab_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_1-100x100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_1-200x200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_1-228x228.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_1-40x40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_1-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_1-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_1-83x83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_2-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_2-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_3-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_3-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_4-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_4-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_5-500x500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\demo\sony_vaio_5-74x74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-ask-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-free-shipping-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-mail-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-mail2-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-money-back-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-phone-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-phone2-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\icon-support-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\logo-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\logo-footer-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\logo\logo-1000x400.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\logo\logo-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\logo\logo-80x80.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\logo_fastor-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\megamenu-banner-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\megamenu-product-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\product-block-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\product-block-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\product-block-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\request-quote-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\slider-01-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\slider-02-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\catalog\slider-03-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\no_image-100x100.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\no_image-40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\cache\placeholder-228x228.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\templates\._fastor.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\templates\default.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\image\templates\fastor.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\semiadmin\config.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\system\storage\cache\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\system\storage\logs\error.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\system\storage\logs\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\system\storage\logs\openbay.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\system\storage\modification\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\worldkids\vqmod\checked.cache" afterPath="" />
     </list>
     <ignored path="worldkids.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,24 +265,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="megamenu.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="megamenu.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/catalog/controller/module/megamenu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="194" column="12" selection-start-line="194" selection-start-column="12" selection-end-line="194" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.3153989">
+              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding>
-                <marker date="1461762514007" expanded="true" signature="7656:7659" placeholder="..." />
+                <marker date="1461818546663" expanded="true" signature="1183:1427" placeholder="..." />
+                <marker date="1461818546663" expanded="true" signature="1551:1891" placeholder="..." />
+                <marker date="1461818546663" expanded="true" signature="4371:4374" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="megamenu.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/semiadmin/controller/module/megamenu.php">
+      <file leaf-file-name="megamenu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/catalog/model/menu/megamenu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="413" column="148" selection-start-line="413" selection-start-column="148" selection-end-line="413" selection-end-column="148" />
-              <folding />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1456129964000" expanded="true" signature="275:395" placeholder="SELECT * FRO..." />
+                <marker date="1456129964000" expanded="true" signature="2678:2804" placeholder="SELECT * FRO..." />
+                <marker date="1456129964000" expanded="true" signature="24433:24491" placeholder="SELECT * FRO..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,6 +297,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/catalog/controller/module/megamenu.php" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
@@ -114,6 +364,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="worldkids" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="worldkids" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catalog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -124,7 +388,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="commit&#9;ACTION&#9;CheckinProject&#10;update&#9;ACTION&#9;Vcs.UpdateProject&#10;share&#9;ACTION&#9;Github.Share" />
+    <property name="SearchEverywhereHistoryKey" value="commit &#9;ACTION&#9;CheckinProject&#10;commi&#9;ACTION&#9;CheckinProject&#10;push&#9;ACTION&#9;Vcs.Push&#10;commit&#9;ACTION&#9;CheckinProject&#10;update&#9;ACTION&#9;Vcs.UpdateProject&#10;share&#9;ACTION&#9;Github.Share" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -159,7 +423,29 @@
       <option name="number" value="Default" />
       <updated>1461661403291</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add .gitignore">
+      <created>1461815634946</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1461815634946</updated>
+    </task>
+    <task id="LOCAL-00002" summary="convert megamenu-&gt;menu(vertical) to categories">
+      <created>1461818674275</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1461818674275</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -167,13 +453,15 @@
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3300866" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3300866" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -181,7 +469,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3300866" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -197,6 +484,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add .gitignore" />
+    <MESSAGE value="convert megamenu-&gt;menu(vertical) to categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="convert megamenu-&gt;menu(vertical) to categories" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -207,7 +499,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="194" column="12" selection-start-line="194" selection-start-column="12" selection-end-line="194" selection-end-column="12" />
           <folding>
-            <marker date="1461762514007" expanded="true" signature="7656:7659" placeholder="..." />
+            <marker date="1461818546663" expanded="true" signature="1183:1427" placeholder="..." />
+            <marker date="1461818546663" expanded="true" signature="1551:1891" placeholder="..." />
+            <marker date="1461818546663" expanded="true" signature="4371:4374" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -220,21 +514,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catalog/controller/module/megamenu.php">
+    <entry file="file://$PROJECT_DIR$/catalog/model/menu/megamenu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="12" selection-start-line="194" selection-start-column="12" selection-end-line="194" selection-end-column="12" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1461762514007" expanded="true" signature="7656:7659" placeholder="..." />
+            <marker date="1456129964000" expanded="true" signature="275:395" placeholder="SELECT * FRO..." />
+            <marker date="1456129964000" expanded="true" signature="2678:2804" placeholder="SELECT * FRO..." />
+            <marker date="1456129964000" expanded="true" signature="24433:24491" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/semiadmin/controller/module/megamenu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.4655173">
           <caret line="413" column="148" selection-start-line="413" selection-start-column="148" selection-end-line="413" selection-end-column="148" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalog/controller/module/megamenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3153989">
+          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+          <folding>
+            <marker date="1461818546663" expanded="true" signature="1183:1427" placeholder="..." />
+            <marker date="1461818546663" expanded="true" signature="1551:1891" placeholder="..." />
+            <marker date="1461818546663" expanded="true" signature="4371:4374" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

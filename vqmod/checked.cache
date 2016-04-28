@@ -378,3 +378,4 @@ semiadmin\controller\module\custom_module.php
 semiadmin\view\template\module\custom_module.tpl
 semiadmin\controller\module\semi_footer.php
 semiadmin\view\template\module\semi_footer.tpl
+semiadmin\view\template\catalog\category_form.tpl
