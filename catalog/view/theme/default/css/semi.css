@@ -48,6 +48,12 @@
     z-index: 1;
     margin-top: 0px;
 }
+.box-links {
+    margin: 20px 0;
+}
+.box-link-download {
+    margin-bottom: 20px;
+}
 
 #semi-footer,
 #semi-footer p,
