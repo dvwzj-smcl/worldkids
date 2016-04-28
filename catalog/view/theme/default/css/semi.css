@@ -11,7 +11,7 @@
 .main-content {
     font-family: Kanit!important;
 }
-
+.common-home.show-vertical-megamenu #main .megamenu-background .vertical .megamenuToogle-wrapper,
 .show-vertical-megamenu #main .megamenu-background .vertical .megamenuToogle-wrapper,
 #main .vertical:hover .megamenuToogle-wrapper,
 .box-with-categories .box-heading {
