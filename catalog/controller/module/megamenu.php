@@ -30,7 +30,7 @@ class ControllerModuleMegamenu extends Controller {
 			'submenu' => array()
 		);
 	}
-	public function sub_category_to_sub_menu($sub_category){
+	public function sub_category_to_sub_menu(){
 		return array(
 			'content_width' => 12,
 			'content_type' => 2,
@@ -58,9 +58,12 @@ class ControllerModuleMegamenu extends Controller {
 					<div class="close-categories"></div>
 					<ul>';
 			foreach($categories as $i => $category){
-
+				$childs = $this->model_catalog_category->getCategories($category['category_id']);
+				if($childs){
+					$html .= $this->get_category_html_childs($category, $childs);
+				}else {
 					$html .= $this->get_category_html_single($category);
-
+				}
 			}
 			$html .= '</ul></li>';
 		}else{
@@ -69,56 +72,27 @@ class ControllerModuleMegamenu extends Controller {
 		return $html;
 	}
 
-	public function get_category_html(&$menu, $categories){
+	public function get_category_html($categories){
+		$html = '<div class="row"><div class="col-sm-12 hover-menu"><div class="menu"><ul>';
 		foreach($categories as $i => $category){
-			$menu['submenu'][$i]['categories'] = '<div class="row"><div class="col-sm-12 hover-menu"><div class="menu"><ul>';
 			$childs = $this->model_catalog_category->getCategories($category['category_id']);
-			/*
-			if($childs){
-				$menu['submenu'][$i]['categories'] .= $this->get_category_html_childs($category, $childs);
-			}else{
-				$menu['submenu'][$i]['categories'] .= $this->get_category_html_single($category);
-			}
-			*/
-			if($childs){
-				foreach($childs as $j => $c){
-					$next_childs = $this->model_catalog_category->getCategories($c['category_id']);
-					$menu['submenu'][$i]['categories'] .= $this->get_category_html_childs($c, $next_childs);
-				}
-			}else{
-				$menu['submenu'][$i]['categories'] .= $this->get_category_html_single($category);
-			}
-			$menu['submenu'][$i]['categories'] .= '</ul></div></div></div>';
+			$html .= $this->get_category_html_childs($category, $childs);
 		}
-		return;
-	}
-
-
-	public function get_sub_menu(&$menu, $categories){
-		foreach($categories as $i => $category){
-			$menu['submenu'][$i] = $this->sub_category_to_sub_menu($category);
-			$childs = $this->model_catalog_category->getCategories($category['category_id']);
-			if($childs){
-				$this->get_sub_menu($menu['submenu'][$i], $childs);
-			}
-		}
+		$html .= '</ul></div></div></div>';
+		return $html;
 	}
 
 	public function get_category_menu($categories){
 		$menu = array();
 		foreach($categories as $i => $category){
 			$menu[$i] = $this->category_to_menu($category);
+			//$menu['submenu'][$i] = $this->sub_category_to_sub_menu($category);
 			$childs = $this->model_catalog_category->getCategories($category['category_id']);
 			if($childs){
-				$this->get_sub_menu($menu[$i], $childs);
-				$this->get_category_html($menu[$i], $childs);
+				$menu[$i]['submenu'][0] = $this->sub_category_to_sub_menu();
+				$menu[$i]['submenu'][0]['categories'] = $this->get_category_html($childs);
 			}
 		}
-		/*
-		echo "<pre>";
-		print_r($menu);
-		echo "</pre>";
-		*/
 		return $menu;
 	}
 
@@ -148,59 +122,11 @@ class ControllerModuleMegamenu extends Controller {
 			$data['menu'] = $this->model_menu_megamenu->getMenu($module_id);
 		}
 
-
 		if($setting['orientation']==1){
+			// convert categories to vertical menu
 			$this->load->model('catalog/category');
 			$categories = $this->model_catalog_category->getCategories(0);
-
-			/*
-			$translate_category_to_menu = array();
-			foreach($categories as $i => $category){
-				$translate_category_to_menu[$i] = $this->category_to_menu($category);
-				$sub_categories = $this->model_catalog_category->getCategories($category['category_id']);
-				$translate_sub_category_to_sub_menu = array();
-				foreach($sub_categories as $j => $sub_category){
-					$sub_level2_categories = $this->model_catalog_category->getCategories($sub_category['category_id']);
-					if($sub_level2_categories){
-						$html = '';
-						$html .= '<div class="row"><div class="col-sm-12 hover-menu"><div class="menu"><ul>';
-						foreach($sub_level2_categories as $k => $sub_category_level2){
-							$sub_level3_categories = $this->model_catalog_category->getCategories($sub_category_level2['category_id']);
-							if($sub_level3_categories){
-								$html .= '<li>
-									<a href="index.php?route=product/category&amp;path='.$sub_category_level2['category_id'].'" onclick="window.location = \'index.php?route=product/category&amp;path='.$sub_category_level2['category_id'].'\';" class="main-menu with-submenu">'.$sub_category_level2['name'].($sub_category_level2['label']?'<span class="megamenu-label" style="background: #3898af;color: #ffffff"><span style="background: #3898af;border-color: #3898af"></span>NEW</span>':'').'</a>
-									<div class="open-categories"></div>
-									<div class="close-categories"></div>
-									<ul>';
-									foreach($sub_level3_categories as $k => $sub_category_level3){
-										$html .= '<li>
-											<a href="index.php?route=product/category&amp;path='.$sub_category_level3['category_id'].'" onclick="window.location = \'index.php?route=product/category&amp;path='.$sub_category_level3['category_id'].'\';" class="">'.$sub_category_level3['name'].'</a>
-										</li>';
-									}
-								$html .= '</ul></li>';
-							}else{
-								$html .= '<li>
-								<a href="index.php?route=product/category&amp;path='.$sub_category_level2['category_id'].'" onclick="window.location = \'index.php?route=product/category&amp;path='.$sub_category_level2['category_id'].'\';" class="main-menu ">'.$sub_category_level2['name'].'</a>
-								</li>';
-							}
-						}
-						$html .= '</ul></div></div></div>';
-						$translate_sub_category_to_sub_menu[$j] = $this->sub_category_to_sub_menu($sub_category);
-						$translate_sub_category_to_sub_menu[$j]['categories'] = $html;
-					}
-				}
-				$translate_category_to_menu[$i]['submenu'] = $sub_categories ? $translate_sub_category_to_sub_menu : array();
-			}
-			*/
-			
-			//$data['menu'] = $translate_category_to_menu;
 			$data['menu'] = $this->get_category_menu($categories);
-
-			/*
-			echo "<pre>";
-			print_r($data['menu']);
-			echo "</pre>";
-			*/
 		}
 		
 		// Pobranie ustawień
