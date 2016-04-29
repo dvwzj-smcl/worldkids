@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2016 at 03:14 PM
+-- Generation Time: Apr 29, 2016 at 12:23 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -726,7 +726,7 @@ CREATE TABLE `oc_camera_slider` (
 --
 
 INSERT INTO `oc_camera_slider` (`id`, `name`, `settings`, `content`) VALUES
-(1, 'Fastor slider', 'a:3:{s:13:"slider_height";s:3:"500";s:12:"slider_width";s:3:"847";s:11:"layout_type";s:1:"1";}', 'a:1:{i:1;a:2:{i:1;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:26:"catalog/toys/slider-01.png";s:4:"link";s:1:"#";}i:2;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:26:"catalog/toys/slider-01.png";s:4:"link";s:1:"#";}}}');
+(1, 'Home Slider', 'a:3:{s:13:"slider_height";s:3:"500";s:12:"slider_width";s:3:"847";s:11:"layout_type";s:1:"1";}', 'a:3:{i:1;a:2:{i:1;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:29:"catalog/slider/home_slide.png";s:4:"link";s:1:"#";}i:2;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:29:"catalog/slider/home_slide.png";s:4:"link";s:1:"#";}}i:2;a:2:{i:1;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:31:"catalog/slider/home_slide_2.png";s:4:"link";s:0:"";}i:2;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:31:"catalog/slider/home_slide_2.png";s:4:"link";s:0:"";}}i:3;a:2:{i:1;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:31:"catalog/slider/home_slide_3.png";s:4:"link";s:0:"";}i:2;a:3:{s:6:"status";s:1:"1";s:6:"slider";s:31:"catalog/slider/home_slide_3.png";s:4:"link";s:0:"";}}}');
 
 -- --------------------------------------------------------
 
@@ -805,7 +805,9 @@ INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 (55, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:32', '2010-11-08 10:31:32'),
 (56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2011-04-22 01:16:37'),
 (57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2011-05-30 12:15:05'),
-(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2011-05-08 13:44:16');
+(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2011-05-08 13:44:16'),
+(59, '', 58, 0, 0, 0, 1, '2016-04-28 11:23:30', '2016-04-28 11:26:30'),
+(60, '', 59, 0, 0, 0, 1, '2016-04-28 11:31:42', '2016-04-28 11:31:42');
 
 -- --------------------------------------------------------
 
@@ -903,7 +905,11 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 (55, 2, 'test 23', '', '', '', ''),
 (56, 2, 'test 24', '', '', '', ''),
 (57, 2, 'Tablets', '', '', '', ''),
-(58, 2, 'test 25', '', '', '', '');
+(58, 2, 'test 25', '', '', '', ''),
+(59, 2, 'test 99', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 99', '', ''),
+(59, 1, 'test 99', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 99', '', ''),
+(60, 1, 'test 999', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 999', '', ''),
+(60, 2, 'test 999', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 999', '', '');
 
 -- --------------------------------------------------------
 
@@ -1003,7 +1009,16 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (55, 55, 1),
 (56, 34, 0),
 (56, 56, 1),
-(57, 57, 0);
+(57, 57, 0),
+(59, 34, 0),
+(59, 59, 3),
+(59, 52, 1),
+(59, 58, 2),
+(60, 34, 0),
+(60, 52, 1),
+(60, 58, 2),
+(60, 59, 3),
+(60, 60, 4);
 
 -- --------------------------------------------------------
 
@@ -1016,6 +1031,14 @@ CREATE TABLE `oc_category_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_category_to_layout`
+--
+
+INSERT INTO `oc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
+(59, 0, 0),
+(60, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1070,7 +1093,9 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (55, 0),
 (56, 0),
 (57, 0),
-(58, 0);
+(58, 0),
+(59, 0),
+(60, 0);
 
 -- --------------------------------------------------------
 
@@ -1440,10 +1465,10 @@ CREATE TABLE `oc_currency` (
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.01950000, 0, '2016-04-27 12:43:25'),
-(2, 'US Dollar', 'USD', '$', '', '2', 0.02850000, 0, '2016-04-27 12:43:25'),
-(3, 'Euro', 'EUR', '', '€', '2', 0.02520000, 0, '2016-04-27 12:43:25'),
-(4, 'บาท', 'THB', '', '฿', '2', 1.00000000, 1, '2016-04-27 12:43:25');
+(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.01960000, 0, '2016-04-29 10:57:11'),
+(2, 'US Dollar', 'USD', '$', '', '2', 0.02860000, 0, '2016-04-29 10:57:11'),
+(3, 'Euro', 'EUR', '', '€', '2', 0.02520000, 0, '2016-04-29 10:57:11'),
+(4, 'บาท', 'THB', '', '฿', '2', 1.00000000, 1, '2016-04-29 10:57:11');
 
 -- --------------------------------------------------------
 
@@ -1759,6 +1784,7 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (4, 'total', 'tax'),
 (5, 'total', 'total'),
 (6, 'module', 'banner'),
+(61, 'module', 'semi_download_order'),
 (8, 'total', 'credit'),
 (9, 'shipping', 'flat'),
 (10, 'total', 'handling'),
@@ -1907,9 +1933,8 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 (5, 1, 4, 1),
 (6, 1, 2, 1),
 (7, 0, 0, 1),
-(8, 0, 0, 1),
 (9, 0, 0, 1),
-(10, 0, 0, 1);
+(11, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1932,7 +1957,6 @@ CREATE TABLE `oc_information_description` (
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(4, 2, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', ''),
 (5, 1, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', '', '', ''),
 (3, 1, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', '', '', ''),
 (6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', '', '', ''),
@@ -1942,12 +1966,11 @@ INSERT INTO `oc_information_description` (`information_id`, `language_id`, `titl
 (7, 1, 'order', '&lt;p&gt;order&lt;/p&gt;', 'order', '', ''),
 (7, 2, 'ใบสั่งซื้อ', '&lt;p&gt;ใบสั่งซื้อ&lt;/p&gt;', 'ใบสั่งซื้อ', '', ''),
 (4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', ''),
-(8, 1, 'Contact Us', '&lt;p&gt;Contact Us&lt;br&gt;&lt;/p&gt;', 'Contact Us', '', ''),
-(8, 2, 'ติดต่อเรา', '&lt;p&gt;ติดต่อเรา&lt;br&gt;&lt;/p&gt;', 'ติดต่อเรา', '', ''),
+(4, 2, 'เกี่ยวกับเรา', '&lt;img src=&quot;http://localhost/worldkids/image/catalog/about/about.png&quot; style=&quot;width: 1303px;&quot;&gt;', 'เกี่ยวกับเรา', '', ''),
 (9, 1, 'News', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'News', '', ''),
 (9, 2, 'ข่าวสาร', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'ข่าวสาร', '', ''),
-(10, 1, 'Download', '&lt;p&gt;dfsdfsdfsdf&lt;/p&gt;', 'Download', '', ''),
-(10, 2, 'ดาวน์โหลด', '&lt;p&gt;fhdgfdfg&lt;/p&gt;', 'ดาวน์โหลด', '', '');
+(11, 1, 'Download', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Download', '', ''),
+(11, 2, 'ดาวน์โหลด', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'ดาวน์โหลด', '', '');
 
 -- --------------------------------------------------------
 
@@ -1968,9 +1991,8 @@ CREATE TABLE `oc_information_to_layout` (
 INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
 (7, 0, 3),
 (4, 0, 16),
-(8, 0, 3),
 (9, 0, 15),
-(10, 0, 17);
+(11, 0, 17);
 
 -- --------------------------------------------------------
 
@@ -1993,9 +2015,8 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 (5, 0),
 (6, 0),
 (7, 0),
-(8, 0),
 (9, 0),
-(10, 0);
+(11, 0);
 
 -- --------------------------------------------------------
 
@@ -2081,10 +2102,12 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (69, 10, 'affiliate', 'column_right', 1),
 (68, 6, 'account', 'column_right', 1),
 (82, 14, 'banner.31', 'column_left', 0),
-(81, 17, 'banner.31', 'column_left', 0),
+(87, 17, 'banner.31', 'column_left', 0),
 (78, 15, 'banner.31', 'column_left', 0),
 (80, 16, 'banner.31', 'column_left', 0),
-(79, 3, 'banner.30', 'column_left', 2);
+(79, 3, 'banner.30', 'column_left', 2),
+(84, 8, 'banner.31', 'column_left', 0),
+(91, 2, 'banner.31', 'column_left', 0);
 
 -- --------------------------------------------------------
 
@@ -2108,10 +2131,9 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (17, 10, 0, 'affiliate/%'),
 (68, 3, 0, 'product/category'),
 (56, 1, 0, 'common/home'),
-(20, 2, 0, 'product/product'),
 (24, 11, 0, 'information/information'),
 (23, 7, 0, 'checkout/%'),
-(31, 8, 0, 'information/contact'),
+(75, 8, 0, 'information/contact'),
 (32, 9, 0, 'information/sitemap'),
 (34, 4, 0, ''),
 (45, 5, 0, 'product/manufacturer'),
@@ -2121,7 +2143,8 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (71, 14, 0, 'blog/blog'),
 (67, 15, 0, 'common/home'),
 (69, 16, 0, 'common/home'),
-(70, 17, 0, 'common/home');
+(78, 17, 0, 'common/home'),
+(82, 2, 0, 'product/product');
 
 -- --------------------------------------------------------
 
@@ -2306,7 +2329,7 @@ INSERT INTO `oc_mega_menu` (`id`, `module_id`, `parent_id`, `rang`, `icon`, `nam
 (22, 2, 0, 2, '', 'a:2:{i:1;s:8:"Products";i:2;s:18:"สินค้า";}', 'product', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', '', '', NULL, 0, 0, 0, 0, '100%', 0, '', 'top left', 'no-repeat', 4, 0, 'a:4:{s:4:"html";a:1:{s:4:"text";a:2:{i:1;s:0:"";i:2;s:0:"";}}s:7:"product";a:4:{s:2:"id";s:0:"";s:4:"name";s:0:"";s:5:"width";s:3:"400";s:6:"height";s:3:"400";}s:10:"categories";a:7:{s:10:"categories";a:0:{}s:7:"columns";s:1:"1";s:7:"submenu";s:1:"1";s:14:"image_position";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";s:15:"submenu_columns";s:1:"1";}s:8:"products";a:5:{s:7:"heading";a:2:{i:1;s:0:"";i:2;s:0:"";}s:8:"products";a:0:{}s:7:"columns";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";}}'),
 (23, 2, 0, 3, '', 'a:2:{i:1;s:4:"News";i:2;s:21:"ข่าวสาร";}', 'news', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', '', '', NULL, 0, 0, 0, 0, '100%', 0, '', 'top left', 'no-repeat', 4, 0, 'a:4:{s:4:"html";a:1:{s:4:"text";a:2:{i:1;s:0:"";i:2;s:0:"";}}s:7:"product";a:4:{s:2:"id";s:0:"";s:4:"name";s:0:"";s:5:"width";s:3:"400";s:6:"height";s:3:"400";}s:10:"categories";a:7:{s:10:"categories";a:0:{}s:7:"columns";s:1:"1";s:7:"submenu";s:1:"1";s:14:"image_position";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";s:15:"submenu_columns";s:1:"1";}s:8:"products";a:5:{s:7:"heading";a:2:{i:1;s:0:"";i:2;s:0:"";}s:8:"products";a:0:{}s:7:"columns";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";}}'),
 (24, 2, 0, 4, '', 'a:2:{i:1;s:6:"Videos";i:2;s:42:"วิดีโอตัวอย่าง";}', '', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', '', '', NULL, 0, 0, 0, 0, '100%', 0, '', 'top left', 'no-repeat', 4, 0, 'a:4:{s:4:"html";a:1:{s:4:"text";a:2:{i:1;s:0:"";i:2;s:0:"";}}s:7:"product";a:4:{s:2:"id";s:0:"";s:4:"name";s:0:"";s:5:"width";s:3:"400";s:6:"height";s:3:"400";}s:10:"categories";a:7:{s:10:"categories";a:0:{}s:7:"columns";s:1:"1";s:7:"submenu";s:1:"1";s:14:"image_position";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";s:15:"submenu_columns";s:1:"1";}s:8:"products";a:5:{s:7:"heading";a:2:{i:1;s:0:"";i:2;s:0:"";}s:8:"products";a:0:{}s:7:"columns";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";}}'),
-(25, 2, 0, 5, '', 'a:2:{i:1;s:7:"Contact";i:2;s:27:"ติดต่อเรา";}', '', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', '', '', NULL, 0, 0, 0, 0, '100%', 0, '', 'top left', 'no-repeat', 4, 0, 'a:4:{s:4:"html";a:1:{s:4:"text";a:2:{i:1;s:0:"";i:2;s:0:"";}}s:7:"product";a:4:{s:2:"id";s:0:"";s:4:"name";s:0:"";s:5:"width";s:3:"400";s:6:"height";s:3:"400";}s:10:"categories";a:7:{s:10:"categories";a:0:{}s:7:"columns";s:1:"1";s:7:"submenu";s:1:"1";s:14:"image_position";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";s:15:"submenu_columns";s:1:"1";}s:8:"products";a:5:{s:7:"heading";a:2:{i:1;s:0:"";i:2;s:0:"";}s:8:"products";a:0:{}s:7:"columns";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";}}'),
+(25, 2, 0, 5, '', 'a:2:{i:1;s:7:"Contact";i:2;s:27:"ติดต่อเรา";}', 'contact', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', '', '', NULL, 0, 0, 0, 0, '100%', 0, '', 'top left', 'no-repeat', 4, 0, 'a:4:{s:4:"html";a:1:{s:4:"text";a:2:{i:1;s:0:"";i:2;s:0:"";}}s:7:"product";a:4:{s:2:"id";s:0:"";s:4:"name";s:0:"";s:5:"width";s:3:"400";s:6:"height";s:3:"400";}s:10:"categories";a:7:{s:10:"categories";a:0:{}s:7:"columns";s:1:"1";s:7:"submenu";s:1:"1";s:14:"image_position";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";s:15:"submenu_columns";s:1:"1";}s:8:"products";a:5:{s:7:"heading";a:2:{i:1;s:0:"";i:2;s:0:"";}s:8:"products";a:0:{}s:7:"columns";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";}}'),
 (26, 2, 0, 0, '', 'a:2:{i:1;s:7:"็Home";i:2;s:24:"หน้าหลัก";}', '', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', 'a:2:{i:1;s:0:"";i:2;s:0:"";}', '', '', NULL, 0, 0, 0, 0, '100%', 0, '', 'top left', 'no-repeat', 4, 0, 'a:4:{s:4:"html";a:1:{s:4:"text";a:2:{i:1;s:0:"";i:2;s:0:"";}}s:7:"product";a:4:{s:2:"id";s:0:"";s:4:"name";s:0:"";s:5:"width";s:3:"400";s:6:"height";s:3:"400";}s:10:"categories";a:7:{s:10:"categories";a:0:{}s:7:"columns";s:1:"1";s:7:"submenu";s:1:"1";s:14:"image_position";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";s:15:"submenu_columns";s:1:"1";}s:8:"products";a:5:{s:7:"heading";a:2:{i:1;s:0:"";i:2;s:0:"";}s:8:"products";a:0:{}s:7:"columns";s:1:"1";s:11:"image_width";s:0:"";s:12:"image_height";s:0:"";}}');
 
 -- --------------------------------------------------------
@@ -2860,7 +2883,7 @@ CREATE TABLE `oc_product` (
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
+(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 2, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
 (29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
 (30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
 (31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 3, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
@@ -2871,12 +2894,12 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
 (40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
 (41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 15, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
+(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 29, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
 (43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:07:49', '2011-09-30 01:05:46'),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
+(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 2, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
 (45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
 (46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39'),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, 0, '2009-02-03 21:08:40', '2011-09-30 01:05:28'),
+(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, 2, '2009-02-03 21:08:40', '2011-09-30 01:05:28'),
 (48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2011-09-30 01:07:06'),
 (49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'catalog/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2011-04-26 08:57:34', '2011-09-30 01:06:23');
 
@@ -3796,11 +3819,12 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (1325, 0, 'config', 'config_encryption', 'UOoeb0T1wfZrdM7FHbqGWYNWLiyCzdsh6oAkd5VDUiutAWSmIVg4SuV9DnGKVahzs9j3pifUySaX1vf9SPsNiPIjhJJnoA5sV7xFa2YDuQXvw7GPGqeIxyIhq457i5jdbiL7N9VnCygsPH434kMcRE2ePJoYH9Vf0W3bCyCf9kJTlR8iY1sbNpdK4bjhNTiecfo7Z6ooo4ranie89jJIQclh01jEOmHQ405PLbpoChCv5DCRsiE2vQqrnDk8BJm36MbcnRS68X6BNsJ981iZaTffBXjqaTxOUiy8YbAJL952cOdzMr11hv0cnNpXqhjPZbfipH5ALfAuxv6kOnSNXtTau3is8WheBNH3XT5SJLE3eun602PsAcXrmli2okE9yo2V8OsiIw9ia3FIdXnHFR6OtqG17oZdaDNk6H2RvWsS5mnkSyWKJhAqgLR8GGOrMY56XxzmYizjisWaMs4qrKpE3GNiN4k30juJRolWa9YM86iC9RPrJFj9BupLOEbHniVM2m4veVAHpB1Thb5fg6u7xlC0eaS3gKAfSgGfLYYtCQSuAV038dNssjkjEe4LLebahZH42FZqKxoeEooPnzwAYb0FnYumDNNt08WDlheYCDrZaZvh1qw8NRN7Rs5xXCwFy4BVhMbrEhjKtMDqNPL7BMEC4cWX1utDRbDwjo3IrbZ22ajRZdrRnx9dfrW0UQ8ffnstlzs5J6x1aHtInYGBe1EHAKEQL0pLZkmt9isgfvNKBryTibKFhN6eAVAchW6Hi0ry5K0hu01BOLPRXB2zkvHtWkDlW2HE7CljePlTk5QHRJoqNTDoPPZY08qIkv9r3X0DE1WKNtvlwV97h4qLK8jqInUJt90EDOBkvHqd9OX9fJtSilPTS1KOrlTq70FHa0tzWWStOFzrTu0Z4yT4FmoQLoMwmLdow0m3lwqoIVK2QOh09xhkrQ3Kav5hRX1FFe2YmQb6PFcQCLsddr6mULh6uwQ7zou3F9SR2S9O0IlAIPMPIyti7WlRtYs9', 0),
 (522, 0, 'fastor_skin', 'fastor_skin', 'worldkids', 0),
 (531, 0, 'select_demo', 'select_demo', '20', 0),
-(1359, 0, 'advanced_grid', 'advanced_grid_module', '{"1":{"custom_class":"","margin_top":"0","margin_right":"0","margin_bottom":"0","margin_left":"0","padding_top":"0","padding_right":"0","padding_bottom":"0","padding_left":"0","force_full_width":"0","background_color":"","background_image_type":"0","background_image":"","background_image_position":"top left","background_image_repeat":"no-repeat","background_image_attachment":"scroll","layout_id":"1","position":"content_top","status":"1","sort_order":"1","disable_on_mobile":"0","column":{"1":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"1","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.1"}}}},"2":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"2","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.2"}}}},"3":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"3","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}},"4":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"4","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.3"}}}},"5":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"5","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}},"6":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"6","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.4"}}}},"7":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"7","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}},"8":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"8","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.5"}}}},"9":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"9","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}}}},"2":{"custom_class":"","margin_top":"0","margin_right":"0","margin_bottom":"0","margin_left":"0","padding_top":"0","padding_right":"0","padding_bottom":"0","padding_left":"0","force_full_width":"0","background_color":"","background_image_type":"0","background_image":"","background_image_position":"top left","background_image_repeat":"no-repeat","background_image_attachment":"scroll","layout_id":"17","position":"content_top","status":"1","sort_order":"","disable_on_mobile":"0","column":{"10":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"semi_footer.1"}}}}}}}', 1),
+(1450, 0, 'semi_download_order', 'semi_download_order_module', '[{"position":"content_top","layout_id":"17","sort_order":"","column_class":"col-md-4","status":"1","links":{"572317cfb395a":{"uniqid":"572317cfb395a","thumbnail_image":"catalog\\/download\\/img_banner_order_download.png","link_download":"test2","sort_order":"","status":"1"},"57232474bc701":{"uniqid":"57232474bc701","thumbnail_image":"catalog\\/download\\/img_banner_order_download.png","link_download":"test","status":"1","sort_order":""}}}]', 1),
+(1447, 0, 'custom_module', 'custom_module_module', '{"1":{"type":"2","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"&lt;div class=&quot;row banners&quot;&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;a href=&quot;download&quot;&gt;&lt;img src=&quot;image\\/catalog\\/home\\/home_banner_order.png&quot; alt=&quot;Banner&quot;&gt;&lt;\\/a&gt;&lt;\\/div&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;iframe width=&quot;408&quot; height=&quot;230&quot; src=&quot;https:\\/\\/www.youtube.com\\/embed\\/dixqHen_FxQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;\\/iframe&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;","2":"&lt;div class=&quot;row banners&quot;&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;a href=&quot;download&quot;&gt;&lt;img src=&quot;image\\/catalog\\/home\\/home_banner_order.png&quot; alt=&quot;Banner&quot;&gt;&lt;\\/a&gt;&lt;\\/div&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;iframe width=&quot;408&quot; height=&quot;230&quot; src=&quot;https:\\/\\/www.youtube.com\\/embed\\/dixqHen_FxQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;\\/iframe&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;"},"layout_id":"1","position":"content_big_column","status":"0","sort_order":""},"2":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_ebook.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_ebook.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""},"3":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_learn.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""},"4":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_cai.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""},"5":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_simulation.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""}}', 1),
 (1352, 0, 'blog_latest', 'blog_latest_module', '{"1":{"heading_title":{"1":"","2":""},"layout_id":"15","position":"content_top","template":"default.tpl","status":"1","thumb_width":"80","thumb_height":"80","articles_limit":"3","sort_order":""}}', 1),
-(1356, 0, 'custom_module', 'custom_module_module', '{"1":{"type":"2","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"&lt;div class=&quot;row banners&quot;&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;image\\/catalog\\/toys\\/banner-03.png&quot; alt=&quot;Banner&quot;&gt;&lt;\\/a&gt;&lt;\\/div&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;iframe width=&quot;408&quot; height=&quot;230&quot; src=&quot;https:\\/\\/www.youtube.com\\/embed\\/dixqHen_FxQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;\\/iframe&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;","2":"&lt;div class=&quot;row banners&quot;&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;image\\/catalog\\/toys\\/banner-03.png&quot; alt=&quot;Banner&quot;&gt;&lt;\\/a&gt;&lt;\\/div&gt;\\r\\n   &lt;div class=&quot;col-sm-6&quot;&gt;&lt;iframe width=&quot;408&quot; height=&quot;230&quot; src=&quot;https:\\/\\/www.youtube.com\\/embed\\/dixqHen_FxQ&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;\\/iframe&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;"},"layout_id":"1","position":"content_big_column","status":"0","sort_order":""},"2":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_ebook.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_ebook.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""},"3":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_learn.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""},"4":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_cai.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""},"5":{"type":"1","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;img src=&quot;http:\\/\\/localhost\\/worldkids\\/image\\/catalog\\/banner\\/home_banner_simulation.png&quot; style=&quot;width: 1171px;&quot;&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"","2":""},"layout_id":"1","position":"content_top","status":"0","sort_order":""},"6":{"type":"2","block_heading":{"1":"","2":""},"block_content":{"1":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;","2":"&lt;p&gt;&lt;br&gt;&lt;\\/p&gt;"},"html":{"1":"&lt;div class=&quot;col-sm-6&quot;&gt;\\r\\nleft\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;col-sm-6&quot;&gt;\\r\\nright\\r\\n&lt;\\/div&gt;","2":"&lt;div class=&quot;col-sm-6&quot;&gt;\\r\\nleft\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;col-sm-6&quot;&gt;\\r\\nright\\r\\n&lt;\\/div&gt;"},"layout_id":"99999","position":"header_notice","status":"0","sort_order":""}}', 1),
 (1030, 0, 'filter_product', 'filter_product_module', '{"1":{"tabs":{"1":{"heading":{"1":"Bestsellers","2":"\\u0e2a\\u0e34\\u0e19\\u0e04\\u0e49\\u0e32\\u0e02\\u0e32\\u0e22\\u0e14\\u0e35"},"title":"latest","product":"","products":"","category":"","categories":""}},"carousel":"0","width":"100","height":"100","itemsperpage":"4","cols":"1","limit":"4","layout_id":"1","position":"column_left","status":"1","sort_order":"1"}}', 1),
 (1046, 0, 'semi_footer', 'semi_footer_module', '{"1":{"company_name":{"1":"","2":"WorldKids Publishing Co.,Ltd."},"address":{"1":"","2":"\\u0e2a\\u0e33\\u0e19\\u0e31\\u0e01\\u0e1e\\u0e34\\u0e21\\u0e1e\\u0e4c\\u0e40\\u0e27\\u0e34\\u0e25\\u0e14\\u0e4c\\u0e04\\u0e34\\u0e14\\u0e2a\\u0e4c"},"operation_time":{"1":"","2":""},"email_title":{"1":"","2":"Email"},"copyright":{"1":"","2":"Copyright &amp;copy; 2010 Worldkids Publishing co.,ltd. All right reserved"},"position":"footer","layout_id":"99999","logo_image":"catalog\\/logo\\/logo.png","email":"worldkids@example","phone1":"","phone2":"","fax":"","facebook":"","line":"","instagram":"","youtube":"","sort_order":"","contact_button":"&lt;b&gt;Notice&lt;\\/b&gt;: Undefined index: contact_button in &lt;b&gt;C:\\\\xampp\\\\htdocs\\\\worldkids\\\\semiadmin\\\\view\\\\template\\\\module\\\\semi_footer.tpl&lt;\\/b&gt; on line &lt;b&gt;162&lt;\\/b&gt;","status":"1"}}', 1),
+(1367, 0, 'advanced_grid', 'advanced_grid_module', '{"1":{"custom_class":"","margin_top":"0","margin_right":"0","margin_bottom":"0","margin_left":"0","padding_top":"0","padding_right":"0","padding_bottom":"0","padding_left":"0","force_full_width":"0","background_color":"","background_image_type":"0","background_image":"","background_image_position":"top left","background_image_repeat":"no-repeat","background_image_attachment":"scroll","layout_id":"1","position":"content_top","status":"1","sort_order":"1","disable_on_mobile":"0","column":{"1":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"1","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.1"}}}},"2":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"2","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.2"}}}},"3":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"3","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}},"4":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"4","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.3"}}}},"5":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"5","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}},"6":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"6","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.4"}}}},"7":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"7","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}},"8":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"8","module":{"1":{"status":"1","sort":"","type":"load_module","load_module":{"module":"custom_module.5"}}}},"9":{"status":"1","width":"12","disable_on_mobile":"0","width_xs":"1","width_sm":"1","width_md":"1","width_lg":"1","sort":"9","module":{"1":{"status":"1","sort":"","type":"products","products":{"module_layout":"products_grid.tpl","title":{"1":"","2":""},"get_products_from":"category","product":"","products":"","category":"","categories":"33,28","width":"80","height":"80","limit":"4"}}}}}}}', 1),
 (1049, 0, 'camera_slider', 'camera_slider_module', '[{"slider_id":"1","layout_id":"1","position":"content_big_column","sort_order":"0","status":"1"}]', 1),
 (1327, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
 (1326, 0, 'config', 'config_file_max_size', '300000', 0),
@@ -4008,7 +4032,7 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (834, 'category_id=26', 'pc'),
 (835, 'category_id=27', 'mac'),
 (730, 'manufacturer_id=8', 'apple'),
-(864, 'information_id=4', 'about_us'),
+(889, 'information_id=4', 'about_us'),
 (768, 'product_id=42', 'test'),
 (789, 'category_id=34', 'mp3-players'),
 (781, 'category_id=36', 'test2'),
@@ -4071,10 +4095,11 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (842, 'information_id=3', 'privacy'),
 (843, 'information_id=5', 'terms'),
 (849, 'information_id=7', 'order'),
-(854, 'information_id=8', 'contact_us'),
 (874, 'information_id=9', 'news'),
+(880, 'category_id=59', 'test99'),
 (858, 'blog_category_id=1', ''),
-(878, 'information_id=10', 'download');
+(886, 'information_id=11', 'download'),
+(881, 'category_id=60', '');
 
 -- --------------------------------------------------------
 
@@ -4122,7 +4147,7 @@ CREATE TABLE `oc_user_group` (
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', '{"access":["analytics\\/google_analytics","captcha\\/basic_captcha","captcha\\/google_captcha","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/filemanager","common\\/menu","common\\/profile","common\\/stats","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/layout","extension\\/analytics","extension\\/captcha","extension\\/feed","extension\\/fraud","extension\\/installer","extension\\/modification","extension\\/module","extension\\/openbay","extension\\/payment","extension\\/shipping","extension\\/total","feed\\/google_base","feed\\/google_sitemap","feed\\/openbaypro","fraud\\/fraudlabspro","fraud\\/ip","fraud\\/maxmind","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","module\\/account","module\\/affiliate","module\\/amazon_login","module\\/amazon_pay","module\\/banner","module\\/bestseller","module\\/carousel","module\\/category","module\\/ebay_listing","module\\/featured","module\\/filter","module\\/google_hangouts","module\\/html","module\\/information","module\\/latest","module\\/pp_button","module\\/pp_login","module\\/slideshow","module\\/special","module\\/store","openbay\\/amazon","openbay\\/amazon_listing","openbay\\/amazon_product","openbay\\/amazonus","openbay\\/amazonus_listing","openbay\\/amazonus_product","openbay\\/ebay","openbay\\/ebay_profile","openbay\\/ebay_template","openbay\\/etsy","openbay\\/etsy_product","openbay\\/etsy_shipping","openbay\\/etsy_shop","payment\\/amazon_login_pay","payment\\/authorizenet_aim","payment\\/authorizenet_sim","payment\\/bank_transfer","payment\\/bluepay_hosted","payment\\/bluepay_redirect","payment\\/cheque","payment\\/cod","payment\\/firstdata","payment\\/firstdata_remote","payment\\/free_checkout","payment\\/g2apay","payment\\/globalpay","payment\\/globalpay_remote","payment\\/klarna_account","payment\\/klarna_invoice","payment\\/liqpay","payment\\/nochex","payment\\/paymate","payment\\/paypoint","payment\\/payza","payment\\/perpetual_payments","payment\\/pp_express","payment\\/pp_payflow","payment\\/pp_payflow_iframe","payment\\/pp_pro","payment\\/pp_pro_iframe","payment\\/pp_standard","payment\\/realex","payment\\/realex_remote","payment\\/sagepay_direct","payment\\/sagepay_server","payment\\/sagepay_us","payment\\/securetrading_pp","payment\\/securetrading_ws","payment\\/skrill","payment\\/twocheckout","payment\\/web_payment_software","payment\\/worldpay","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","shipping\\/auspost","shipping\\/citylink","shipping\\/fedex","shipping\\/flat","shipping\\/free","shipping\\/item","shipping\\/parcelforce_48","shipping\\/pickup","shipping\\/royal_mail","shipping\\/ups","shipping\\/usps","shipping\\/weight","tool\\/backup","tool\\/error_log","tool\\/upload","total\\/coupon","total\\/credit","total\\/handling","total\\/klarna_fee","total\\/low_order_fee","total\\/reward","total\\/shipping","total\\/sub_total","total\\/tax","total\\/total","total\\/voucher","user\\/api","user\\/user","user\\/user_permission","module\\/semi_footer","module\\/advanced_grid","module\\/blog_category","module\\/blog_latest","module\\/blog","module\\/blog_popular","module\\/blog_tags","module\\/blog_related_post","module\\/blog_search","module\\/breadcrumb_background_image","module\\/camera_slider","module\\/carousel_item","module\\/category_wall","module\\/cookie","module\\/custom_module","module\\/faq","module\\/fastor","module\\/filter_product","module\\/full_screen_background_slider","module\\/header_notice","module\\/megamenu_manager_links","module\\/megamenu","module\\/newsletter","module\\/popup","module\\/product_blocks","module\\/product_questions","module\\/product_tabs","module\\/revolution_slider","module\\/revslideropencart","module\\/slideshow"],"modify":["analytics\\/google_analytics","captcha\\/basic_captcha","captcha\\/google_captcha","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/filemanager","common\\/menu","common\\/profile","common\\/stats","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/layout","extension\\/analytics","extension\\/captcha","extension\\/feed","extension\\/fraud","extension\\/installer","extension\\/modification","extension\\/module","extension\\/openbay","extension\\/payment","extension\\/shipping","extension\\/total","feed\\/google_base","feed\\/google_sitemap","feed\\/openbaypro","fraud\\/fraudlabspro","fraud\\/ip","fraud\\/maxmind","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","module\\/account","module\\/affiliate","module\\/amazon_login","module\\/amazon_pay","module\\/banner","module\\/bestseller","module\\/carousel","module\\/category","module\\/ebay_listing","module\\/featured","module\\/filter","module\\/google_hangouts","module\\/html","module\\/information","module\\/latest","module\\/pp_button","module\\/pp_login","module\\/slideshow","module\\/special","module\\/store","openbay\\/amazon","openbay\\/amazon_listing","openbay\\/amazon_product","openbay\\/amazonus","openbay\\/amazonus_listing","openbay\\/amazonus_product","openbay\\/ebay","openbay\\/ebay_profile","openbay\\/ebay_template","openbay\\/etsy","openbay\\/etsy_product","openbay\\/etsy_shipping","openbay\\/etsy_shop","payment\\/amazon_login_pay","payment\\/authorizenet_aim","payment\\/authorizenet_sim","payment\\/bank_transfer","payment\\/bluepay_hosted","payment\\/bluepay_redirect","payment\\/cheque","payment\\/cod","payment\\/firstdata","payment\\/firstdata_remote","payment\\/free_checkout","payment\\/g2apay","payment\\/globalpay","payment\\/globalpay_remote","payment\\/klarna_account","payment\\/klarna_invoice","payment\\/liqpay","payment\\/nochex","payment\\/paymate","payment\\/paypoint","payment\\/payza","payment\\/perpetual_payments","payment\\/pp_express","payment\\/pp_payflow","payment\\/pp_payflow_iframe","payment\\/pp_pro","payment\\/pp_pro_iframe","payment\\/pp_standard","payment\\/realex","payment\\/realex_remote","payment\\/sagepay_direct","payment\\/sagepay_server","payment\\/sagepay_us","payment\\/securetrading_pp","payment\\/securetrading_ws","payment\\/skrill","payment\\/twocheckout","payment\\/web_payment_software","payment\\/worldpay","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","shipping\\/auspost","shipping\\/citylink","shipping\\/fedex","shipping\\/flat","shipping\\/free","shipping\\/item","shipping\\/parcelforce_48","shipping\\/pickup","shipping\\/royal_mail","shipping\\/ups","shipping\\/usps","shipping\\/weight","tool\\/backup","tool\\/error_log","tool\\/upload","total\\/coupon","total\\/credit","total\\/handling","total\\/klarna_fee","total\\/low_order_fee","total\\/reward","total\\/shipping","total\\/sub_total","total\\/tax","total\\/total","total\\/voucher","user\\/api","user\\/user","user\\/user_permission","module\\/semi_footer","module\\/advanced_grid","module\\/blog_category","module\\/blog_latest","module\\/blog","module\\/blog_popular","module\\/blog_tags","module\\/blog_related_post","module\\/blog_search","module\\/breadcrumb_background_image","module\\/camera_slider","module\\/carousel_item","module\\/category_wall","module\\/cookie","module\\/custom_module","module\\/faq","module\\/fastor","module\\/filter_product","module\\/full_screen_background_slider","module\\/header_notice","module\\/megamenu_manager_links","module\\/megamenu","module\\/newsletter","module\\/popup","module\\/product_blocks","module\\/product_questions","module\\/product_tabs","module\\/revolution_slider","module\\/revslideropencart","module\\/slideshow"]}'),
+(1, 'Administrator', '{"access":["analytics\\/google_analytics","captcha\\/basic_captcha","captcha\\/google_captcha","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/filemanager","common\\/menu","common\\/profile","common\\/stats","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/layout","extension\\/analytics","extension\\/captcha","extension\\/feed","extension\\/fraud","extension\\/installer","extension\\/modification","extension\\/module","extension\\/openbay","extension\\/payment","extension\\/shipping","extension\\/total","feed\\/google_base","feed\\/google_sitemap","feed\\/openbaypro","fraud\\/fraudlabspro","fraud\\/ip","fraud\\/maxmind","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","module\\/account","module\\/affiliate","module\\/amazon_login","module\\/amazon_pay","module\\/banner","module\\/bestseller","module\\/carousel","module\\/category","module\\/ebay_listing","module\\/featured","module\\/filter","module\\/google_hangouts","module\\/html","module\\/information","module\\/latest","module\\/pp_button","module\\/pp_login","module\\/slideshow","module\\/special","module\\/store","openbay\\/amazon","openbay\\/amazon_listing","openbay\\/amazon_product","openbay\\/amazonus","openbay\\/amazonus_listing","openbay\\/amazonus_product","openbay\\/ebay","openbay\\/ebay_profile","openbay\\/ebay_template","openbay\\/etsy","openbay\\/etsy_product","openbay\\/etsy_shipping","openbay\\/etsy_shop","payment\\/amazon_login_pay","payment\\/authorizenet_aim","payment\\/authorizenet_sim","payment\\/bank_transfer","payment\\/bluepay_hosted","payment\\/bluepay_redirect","payment\\/cheque","payment\\/cod","payment\\/firstdata","payment\\/firstdata_remote","payment\\/free_checkout","payment\\/g2apay","payment\\/globalpay","payment\\/globalpay_remote","payment\\/klarna_account","payment\\/klarna_invoice","payment\\/liqpay","payment\\/nochex","payment\\/paymate","payment\\/paypoint","payment\\/payza","payment\\/perpetual_payments","payment\\/pp_express","payment\\/pp_payflow","payment\\/pp_payflow_iframe","payment\\/pp_pro","payment\\/pp_pro_iframe","payment\\/pp_standard","payment\\/realex","payment\\/realex_remote","payment\\/sagepay_direct","payment\\/sagepay_server","payment\\/sagepay_us","payment\\/securetrading_pp","payment\\/securetrading_ws","payment\\/skrill","payment\\/twocheckout","payment\\/web_payment_software","payment\\/worldpay","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","shipping\\/auspost","shipping\\/citylink","shipping\\/fedex","shipping\\/flat","shipping\\/free","shipping\\/item","shipping\\/parcelforce_48","shipping\\/pickup","shipping\\/royal_mail","shipping\\/ups","shipping\\/usps","shipping\\/weight","tool\\/backup","tool\\/error_log","tool\\/upload","total\\/coupon","total\\/credit","total\\/handling","total\\/klarna_fee","total\\/low_order_fee","total\\/reward","total\\/shipping","total\\/sub_total","total\\/tax","total\\/total","total\\/voucher","user\\/api","user\\/user","user\\/user_permission","module\\/semi_footer","module\\/advanced_grid","module\\/blog_category","module\\/blog_latest","module\\/blog","module\\/blog_popular","module\\/blog_tags","module\\/blog_related_post","module\\/blog_search","module\\/breadcrumb_background_image","module\\/camera_slider","module\\/carousel_item","module\\/category_wall","module\\/cookie","module\\/custom_module","module\\/faq","module\\/fastor","module\\/filter_product","module\\/full_screen_background_slider","module\\/header_notice","module\\/megamenu_manager_links","module\\/megamenu","module\\/newsletter","module\\/popup","module\\/product_blocks","module\\/product_questions","module\\/product_tabs","module\\/revolution_slider","module\\/revslideropencart","module\\/slideshow","module\\/semi_order_download","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order"],"modify":["analytics\\/google_analytics","captcha\\/basic_captcha","captcha\\/google_captcha","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/filemanager","common\\/menu","common\\/profile","common\\/stats","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/layout","extension\\/analytics","extension\\/captcha","extension\\/feed","extension\\/fraud","extension\\/installer","extension\\/modification","extension\\/module","extension\\/openbay","extension\\/payment","extension\\/shipping","extension\\/total","feed\\/google_base","feed\\/google_sitemap","feed\\/openbaypro","fraud\\/fraudlabspro","fraud\\/ip","fraud\\/maxmind","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","module\\/account","module\\/affiliate","module\\/amazon_login","module\\/amazon_pay","module\\/banner","module\\/bestseller","module\\/carousel","module\\/category","module\\/ebay_listing","module\\/featured","module\\/filter","module\\/google_hangouts","module\\/html","module\\/information","module\\/latest","module\\/pp_button","module\\/pp_login","module\\/slideshow","module\\/special","module\\/store","openbay\\/amazon","openbay\\/amazon_listing","openbay\\/amazon_product","openbay\\/amazonus","openbay\\/amazonus_listing","openbay\\/amazonus_product","openbay\\/ebay","openbay\\/ebay_profile","openbay\\/ebay_template","openbay\\/etsy","openbay\\/etsy_product","openbay\\/etsy_shipping","openbay\\/etsy_shop","payment\\/amazon_login_pay","payment\\/authorizenet_aim","payment\\/authorizenet_sim","payment\\/bank_transfer","payment\\/bluepay_hosted","payment\\/bluepay_redirect","payment\\/cheque","payment\\/cod","payment\\/firstdata","payment\\/firstdata_remote","payment\\/free_checkout","payment\\/g2apay","payment\\/globalpay","payment\\/globalpay_remote","payment\\/klarna_account","payment\\/klarna_invoice","payment\\/liqpay","payment\\/nochex","payment\\/paymate","payment\\/paypoint","payment\\/payza","payment\\/perpetual_payments","payment\\/pp_express","payment\\/pp_payflow","payment\\/pp_payflow_iframe","payment\\/pp_pro","payment\\/pp_pro_iframe","payment\\/pp_standard","payment\\/realex","payment\\/realex_remote","payment\\/sagepay_direct","payment\\/sagepay_server","payment\\/sagepay_us","payment\\/securetrading_pp","payment\\/securetrading_ws","payment\\/skrill","payment\\/twocheckout","payment\\/web_payment_software","payment\\/worldpay","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","shipping\\/auspost","shipping\\/citylink","shipping\\/fedex","shipping\\/flat","shipping\\/free","shipping\\/item","shipping\\/parcelforce_48","shipping\\/pickup","shipping\\/royal_mail","shipping\\/ups","shipping\\/usps","shipping\\/weight","tool\\/backup","tool\\/error_log","tool\\/upload","total\\/coupon","total\\/credit","total\\/handling","total\\/klarna_fee","total\\/low_order_fee","total\\/reward","total\\/shipping","total\\/sub_total","total\\/tax","total\\/total","total\\/voucher","user\\/api","user\\/user","user\\/user_permission","module\\/semi_footer","module\\/advanced_grid","module\\/blog_category","module\\/blog_latest","module\\/blog","module\\/blog_popular","module\\/blog_tags","module\\/blog_related_post","module\\/blog_search","module\\/breadcrumb_background_image","module\\/camera_slider","module\\/carousel_item","module\\/category_wall","module\\/cookie","module\\/custom_module","module\\/faq","module\\/fastor","module\\/filter_product","module\\/full_screen_background_slider","module\\/header_notice","module\\/megamenu_manager_links","module\\/megamenu","module\\/newsletter","module\\/popup","module\\/product_blocks","module\\/product_questions","module\\/product_tabs","module\\/revolution_slider","module\\/revslideropencart","module\\/slideshow","module\\/semi_order_download","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order","module\\/semi_download_order"]}'),
 (10, 'Demonstration', '');
 
 -- --------------------------------------------------------
@@ -9556,12 +9581,12 @@ ALTER TABLE `oc_camera_slider`
 -- AUTO_INCREMENT for table `oc_cart`
 --
 ALTER TABLE `oc_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `oc_category`
 --
 ALTER TABLE `oc_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `oc_country`
 --
@@ -9641,7 +9666,7 @@ ALTER TABLE `oc_custom_field_value`
 -- AUTO_INCREMENT for table `oc_download`
 --
 ALTER TABLE `oc_download`
-  MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `oc_event`
 --
@@ -9651,7 +9676,7 @@ ALTER TABLE `oc_event`
 -- AUTO_INCREMENT for table `oc_extension`
 --
 ALTER TABLE `oc_extension`
-  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT for table `oc_filter`
 --
@@ -9676,7 +9701,7 @@ ALTER TABLE `oc_geo_zone`
 -- AUTO_INCREMENT for table `oc_information`
 --
 ALTER TABLE `oc_information`
-  MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `oc_language`
 --
@@ -9691,12 +9716,12 @@ ALTER TABLE `oc_layout`
 -- AUTO_INCREMENT for table `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 --
 -- AUTO_INCREMENT for table `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
-  MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 --
 -- AUTO_INCREMENT for table `oc_length_class`
 --
@@ -9916,7 +9941,7 @@ ALTER TABLE `oc_revslider_static_slides`
 -- AUTO_INCREMENT for table `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1360;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1451;
 --
 -- AUTO_INCREMENT for table `oc_stock_status`
 --
@@ -9951,7 +9976,7 @@ ALTER TABLE `oc_upload`
 -- AUTO_INCREMENT for table `oc_url_alias`
 --
 ALTER TABLE `oc_url_alias`
-  MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=879;
+  MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=890;
 --
 -- AUTO_INCREMENT for table `oc_user`
 --
