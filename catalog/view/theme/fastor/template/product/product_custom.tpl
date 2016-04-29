@@ -1,4 +1,3 @@
-test
 <?php echo $header;
 $theme_options = $this->registry->get('theme_options');
 $config = $this->registry->get('config');
