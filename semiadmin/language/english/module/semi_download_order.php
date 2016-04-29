@@ -16,6 +16,7 @@ $_['entry_status'] = 'Status';
 $_['entry_thumbnail_image'] = 'Thumbnail';
 $_['entry_link_download'] = 'Link Download';
 $_['entry_sort_order'] = 'Sort Order';
+$_['entry_column_class'] = 'Item Per Row';
 
 // Error
 $_['error_permission'] = 'Warning: You do not have permission to modify module Semi; Order Download!';

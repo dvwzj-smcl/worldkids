@@ -17,8 +17,9 @@ class ControllerModuleSemiDownloadOrder extends Controller {
         // Set the title of the page to the heading title in the Language file i.e., Hello World
         $this->document->setTitle(preg_replace('/<b>(.*?)<\/b>/', '$1',$this->language->get('heading_title')));
 
-        //$this->document->addStyle('view/bower_components/semantic/dist/semantic.min.css');
-        //$this->document->addScript('view/bower_components/semantic/dist/semantic.min.js');
+        $this->document->addStyle('view/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css');
+        $this->document->addScript('view/bower_components/datatables.net/js/jquery.dataTables.min.js');
+        $this->document->addScript('view/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');
 
         // Load the Setting Model  (All of the OpenCart Module & General Settings are saved using this Model )
         $this->load->model('setting/setting');
@@ -26,6 +27,7 @@ class ControllerModuleSemiDownloadOrder extends Controller {
         // Start If: Validates and check if data is coming by save (POST) method
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
             // Parse all the coming data to Setting Model to save it in database.
+            /*
             if(isset($this->request->post['mode']) && $this->request->post['mode']=='remove'){
                 $module = $this->config->get('semi_download_order_module');
                 //echo "before<pre>";
@@ -47,6 +49,56 @@ class ControllerModuleSemiDownloadOrder extends Controller {
                 //die();
                 $this->model_setting_setting->editSetting('semi_download_order', $this->request->post);
             }
+            */
+            $post = $this->request->post;
+            $module = $this->config->get('semi_download_order_module');
+            if(isset($this->request->get['mode']) && $this->request->get['mode']=='edit_module'){
+                $links = isset($module[0]['links']) ? $module[0]['links'] : array();
+                $post['links'] = $links;
+                $module[0] = $post;
+                $this->model_setting_setting->editSetting('semi_download_order', array('semi_download_order_module'=>$module));
+            }else if(isset($this->request->get['mode']) && $this->request->get['mode']=='add_row'){
+                if(!isset($module[0])) {
+                    $module[0] = array(
+                        'position' => 'content_top',
+                        'layout_id' => 99999,
+                        'links' => array(),
+                        'sort_order' => null,
+                        'column_class' => 'col-md-4',
+                        'status' => 1
+                    );
+                }
+                $uniqid = uniqid();
+                $module[0]['links'][$uniqid] = array(
+                    'uniqid'=> $uniqid,
+                    'thumbnail_image' => $post['thumbnail_image'],
+                    'link_download' => $post['link_download'],
+                    'status' => $post['status'],
+                    'sort_order' => $post['sort_order']
+                );
+                uasort($module[0]['links'], 'compare_sort_order');
+                /*
+                echo "<pre>";
+                print_r($module);
+                echo "</pre>";
+                die();
+                */
+                $this->model_setting_setting->editSetting('semi_download_order', array('semi_download_order_module'=>$module));
+            }else if(isset($this->request->get['mode']) && $this->request->get['mode']=='edit_row'){
+                $uniqid = $post['uniqid'];
+                if(isset($module[0]['links'][$uniqid])) {
+                    $module[0]['links'][$uniqid] = $post;
+                }
+                uasort($module[0]['links'], 'compare_sort_order');
+                $this->model_setting_setting->editSetting('semi_download_order', array('semi_download_order_module'=>$module));
+            }else if(isset($this->request->get['mode']) && $this->request->get['mode']=='remove_row'){
+                $uniqid = $post['uniqid'];
+                if(isset($module[0]['links'][$uniqid])){
+                    unset($module[0]['links'][$uniqid]);
+                }
+                uasort($module[0]['links'], 'compare_sort_order');
+                $this->model_setting_setting->editSetting('semi_download_order', array('semi_download_order_module'=>$module));
+            }
 
             // To display the success text on data save
             $this->session->data['success'] = $this->language->get('text_success');
@@ -63,6 +115,7 @@ class ControllerModuleSemiDownloadOrder extends Controller {
         $data['entry_thumbnail_image'] = $this->language->get('entry_thumbnail_image');
         $data['entry_link_download'] = $this->language->get('entry_link_download');
         $data['entry_sort_order'] = $this->language->get('entry_sort_order');
+        $data['entry_column_class'] = $this->language->get('entry_column_class');
 
         $this->load->model('tool/image');
         $data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
@@ -153,13 +206,39 @@ class ControllerModuleSemiDownloadOrder extends Controller {
         }
 
         if(!isset($data['module'][0])){
-            $data['module'][0] = array('position'=>'content_top','layout_id'=>17,'links'=>array(),'sort_order'=>null,'status'=>1);
+            $data['module'][0] = array(
+                'position' => 'content_top',
+                'layout_id' => 99999,
+                'links' => array(),
+                'sort_order' => null,
+                'column_class' => 'col-md-4',
+                'status' => 1
+            );
         }
         //$data['file_count'] = count($data['module']);
 
         // Layouts
         $this->load->model('design/layout');
         $data['layouts'] = $this->model_design_layout->getLayouts();
+
+        // Multistore
+        $data['stores'] = array();
+        $this->load->model('setting/store');
+        $results = $this->model_setting_store->getStores();
+
+        $data['stores'][] = array(
+            'name' => 'Default',
+            'href' => '',
+            'store_id' => 0
+        );
+
+        foreach ($results as $result) {
+            $data['stores'][] = array(
+                'name' => $result['name'],
+                'href' => $result['url'],
+                'store_id' => $result['store_id']
+            );
+        }
 
         // Languages
         $this->load->model('localisation/language');
@@ -169,7 +248,20 @@ class ControllerModuleSemiDownloadOrder extends Controller {
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        $this->response->setOutput($this->load->view('module/semi_download_order.tpl', $data));
+        if(isset($this->request->get['mode']) && $this->request->get['mode']=='edit_module'){
+            $this->response->setOutput($this->load->view('module/semi_download_order/edit_module.tpl', $data));
+        }else if(isset($this->request->get['mode']) && $this->request->get['mode']=='add_row'){
+            $this->response->setOutput($this->load->view('module/semi_download_order/add_row.tpl', $data));
+        }else if(isset($this->request->get['mode']) && $this->request->get['mode']=='edit_row'){
+            $data['link'] = $data['module'][0]['links'][$this->request->get['uniqid']];
+            $this->response->setOutput($this->load->view('module/semi_download_order/edit_row.tpl', $data));
+        }else{
+            $data['links'] = array();
+            foreach($data['module'][0]['links'] as $link){
+                $data['links'][] = $link;
+            }
+            $this->response->setOutput($this->load->view('module/semi_download_order/index.tpl', $data));
+        }
     }
 
     /* Function that validates the data when Save Button is pressed */
@@ -201,4 +293,8 @@ class ControllerModuleSemiDownloadOrder extends Controller {
         /* End Block*/
     }
     /* End Validation Function*/
+}
+
+function compare_sort_order($a, $b){
+    return strnatcmp($a['sort_order'], $b['sort_order']);
 }

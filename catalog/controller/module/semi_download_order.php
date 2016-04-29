@@ -12,6 +12,7 @@ class ControllerModuleSemiDownloadOrder extends Controller {
 
         //$data['thumbnail_image'] = html_entity_decode($setting['thumbnail_image']);
         //$data['link_download'] = html_entity_decode($setting['link_download']);
+        $data['column_class'] = $setting['column_class'];
         $data['links'] = $setting['links'];
 
         //print_r($setting);
