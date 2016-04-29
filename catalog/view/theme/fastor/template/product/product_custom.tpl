@@ -213,7 +213,7 @@ include('catalog/view/theme/'.$config->get('config_template').'/template/new_ele
 			        <?php } ?>
 			        <span><?php echo $text_stock; ?></span> <?php echo $stock; ?></div>
 			      <?php if ($price) { ?>
-			      <div class="price">
+			      <!-- div class="price">
 			        <?php if($theme_options->get( 'display_specials_countdown' ) == '1' && $special) { $countdown = rand(0, 5000)*rand(0, 5000); 
 			                  $product_detail = $theme_options->getDataProduct( $product_id );
 			                  $date_end = $product_detail['date_end'];
@@ -249,7 +249,7 @@ include('catalog/view/theme/'.$config->get('config_template').'/template/new_ele
 			          <?php } ?>
 			        </div>
 			        <?php } ?>
-			      </div>
+			      </div -->
 			      <?php } ?>
 			     </div>
 			     
@@ -260,7 +260,7 @@ include('catalog/view/theme/'.$config->get('config_template').'/template/new_ele
 			        <?php foreach ($product_options_center as $module) { echo $module; } ?>
 			        
 			        <?php if ($options) { ?>
-			        <div class="options2">
+			        <!-- div class="options2">
      			        <h2><?php echo $text_option; ?></h2>
      			        <?php foreach ($options as $option) { ?>
      			        <?php if ($option['type'] == 'select') { ?>
@@ -417,7 +417,7 @@ include('catalog/view/theme/'.$config->get('config_template').'/template/new_ele
      			       	</div>
      			       	<?php } ?>
      			        <?php } ?>
-     			   </div>
+     			   </div -->
 			        <?php } ?>
 			      </div>
 			      <?php } ?>
@@ -437,7 +437,7 @@ include('catalog/view/theme/'.$config->get('config_template').'/template/new_ele
 			      </div>
 			      <?php } ?>
 			      
-			      <div class="cart">
+			      <!-- div class="cart">
 			        <div class="add-to-cart clearfix">
 			          <?php 
 			          $product_enquiry = $modules->getModules('product_enquiry');
@@ -473,7 +473,7 @@ include('catalog/view/theme/'.$config->get('config_template').'/template/new_ele
 			        <?php if ($minimum > 1) { ?>
 			        <div class="minimum"><?php echo $text_minimum; ?></div>
 			        <?php } ?>
-			      </div>
+			      </div -->
 			     </div><!-- End #product -->
 			      
 			      <?php 

@@ -8,6 +8,8 @@
 .tooltip,
 .breadcrumb .container h1,
 .breadcrumb a,
+#content #tabs a,
+#content #tab-description,
 .main-content {
     font-family: Kanit!important;
 }
@@ -29,6 +31,9 @@
 }
 #main .vertical ul.megamenu > li {
     border-color: #dadada!important;
+}
+.product-grid .product:hover:before, .product-list > div:hover {
+    border-color: #F4B800!important;
 }
 #main .vertical ul.megamenu > li:hover,
 .box-category > ul li a.active,

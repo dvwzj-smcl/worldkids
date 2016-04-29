@@ -10,4 +10,6 @@ $(function(){
         'height': $('#semi-footer').height()
     });
 
+    $('font').attr('face', 'Kanit');
+
 })
